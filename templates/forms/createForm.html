@@ -1,0 +1,22 @@
+{% extends "create.html" %}
+{% block forms %}
+    <form method="POST" action="{{ url_for('create')}}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.content.label }}
+            {{ form.content(class="formContent") }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+    <span>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </span>
+{% endblock forms %}
