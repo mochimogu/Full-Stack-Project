@@ -8,4 +8,6 @@ class CreateForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-
+class UpdateForm(FlaskForm):
+    updateContent = StringField("Update Content", validators=[DataRequired()])
+    submit = SubmitField('Update')

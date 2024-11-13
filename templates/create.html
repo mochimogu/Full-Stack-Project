@@ -1,9 +1,20 @@
 {% extends "main.html" %}
 {% block content %}
-    <h1>HELLO CONTENT</h1>
+    <h1>CONTENT</h1>
     <div>
-        {% block forms %}
-        {% endblock forms %}
+        {% if showForm == True %}
+            {% block forms %}
+            {% endblock forms %}
+        {% else %}
+            {% for text in data %}
+                <div>
+                    <span>{{ text[1] }}</span>
+                    <span>Last Edit: {{ text[2] }}</span>
+                    <span>Created By: {{ text[3] }}</span>
+                    <a href="{{ url_for("edit", id=text[0])}}"><button>Edit</button></a>
+                    <a href="{{ url_for("delete", id=text[0])}}"><button>Delete</button></a>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
-
 {% endblock content %}

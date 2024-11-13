@@ -1,0 +1,13 @@
+{% extends "create.html" %}
+{% block forms %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.updateContent.label }}
+            {{ form.updateContent(class="formContent") }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+{% endblock forms %}

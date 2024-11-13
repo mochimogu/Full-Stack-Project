@@ -48,10 +48,48 @@ def createTable():
     
 # createTable();
 
+def getAll():
+    with get_db_cursor(True) as cur:
+        
+        query = """SELECT * FROM CRUD"""
+        
+        cur.execute(query)
+        
+        results = cur.fetchall()
+        
+        return results
+    
+def getByID(id):
+    with get_db_cursor(True) as cur:
+        query = """SELECT CONTENT FROM CRUD WHERE CRUD_ID=%s;"""
+        cur.execute(query, (id,))
+        
+        results = cur.fetchone()
+        
+        return results
+        
 
+def insert(data):
+    with get_db_cursor(True) as cur:
+        query = """INSERT INTO CRUD (CONTENT) VALUES (%s);"""
+        cur.execute(query, (data,))
+        
 
-
-
-
-
-
+def update(id, content):
+    with get_db_cursor(True) as cur:
+        # print(id, content)
+        query = """UPDATE CRUD SET CONTENT = %s, LAST_EDIT = CURRENT_TIMESTAMP WHERE CRUD_ID = %s;"""
+        cur.execute(query, (content, id))
+        if cur.rowcount > 0:
+            return 0
+        else:
+            return -1
+        
+def delete(id):
+    with get_db_cursor(True) as cur:
+        query = """DELETE FROM CRUD WHERE CRUD_ID = %s;"""
+        cur.execute(query, (id,))
+        if cur.rowcount > 0:
+            return 0
+        else:
+            return -1
