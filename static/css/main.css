@@ -1,3 +1,106 @@
 body {
-    
+    background-color: aliceblue;
+}
+:root {
+    /* PRIMARY COLOR*/
+    --primary-color : hsl(217, 71%, 53%);
+    /* DANGER COLOR */
+    --danger-color : hsl(348, 100%, 61%);
+}
+/* NAVBAR CONTAINER */
+.navContainer {
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.linkContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.linkContainer a {
+    text-align: center;
+    margin: auto;
+    margin-right: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+.linkContainer a > span {
+    font-size: 24px;
+}
+
+.linkAnchors {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.linkAnchors a {
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+/* CONTENT CONTAINER */
+.contentContainer {
+    margin: 10px;
+    padding: 5px;
+}
+.dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dataDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+}
+
+.contentDiv {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+.editButton {
+    border-radius: 5px;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 10px;
+}
+.editButton:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.deleteButton {
+    border-radius: 5px;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px;
+}
+.deleteButton:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+.spanDiv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 12px;
+}
+.spanDiv span {
+    margin: 2px;
 }

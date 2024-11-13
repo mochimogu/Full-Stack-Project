@@ -1,18 +1,30 @@
 {% extends "main.html" %}
 {% block content %}
     <h1>CONTENT</h1>
-    <div>
+    <div  class="dataContainer">
         {% if showForm == True %}
             {% block forms %}
             {% endblock forms %}
         {% else %}
             {% for text in data %}
-                <div>
-                    <span>{{ text[1] }}</span>
-                    <span>Last Edit: {{ text[2] }}</span>
-                    <span>Created By: {{ text[3] }}</span>
-                    <a href="{{ url_for("edit", id=text[0])}}"><button>Edit</button></a>
-                    <a href="{{ url_for("delete", id=text[0])}}"><button>Delete</button></a>
+                <div class="dataDiv">
+                    <div class="contentDiv">
+                        <div>
+                            <h2>{{ text[1] }}</h2>
+                        </div>
+                        <div class="buttonDiv">
+                            <a href="{{ url_for("edit", id=text[0])}}">
+                                <button class="editButton">Edit</button>
+                            </a>
+                            <a href="{{ url_for("delete", id=text[0])}}">
+                                <button  class="deleteButton">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="spanDiv">
+                        <span>Created By: {{ text[3] }}</span>
+                        <span>Last Edit: {{ text[2] }}</span>
+                    </div>
                 </div>
             {% endfor %}
         {% endif %}

@@ -1,14 +1,14 @@
 {% block navbar %}
-    <div>
-        <span>CRUD APP</span>
-        <div>
-            <ul>
+    <div class="navContainer">
+        <div class="linkContainer">
+            <a href="/"><span>CRUD APP</span></a>
+            <ul class="linkAnchors">
                 <a href="/"><li>Home</li></a>
-                <a href="/crud"><li>All CRUD</li></a>
+                <a href="/crud"><li>Content</li></a>
                 <a href="/crud/create"><li>Create</li></a>
             </ul>
         </div>
-        <div>
+        <div class="search">
             <input type="text"/>
             <button>Search</button>
         </div>
