@@ -1,5 +1,16 @@
 body {
     background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+span:hover {
+    cursor: default;
+}
+h1, h2, p:hover {
+    cursor: default;
+}
+h1, h1, p, button {
+    caret-color: transparent;
 }
 :root {
     /* PRIMARY COLOR*/
@@ -12,7 +23,10 @@ body {
     display:  flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 15px;
+    background-color: whitesmoke;
+    margin-left: 0;
+    margin-right: 0;
 }
 .linkContainer {
     display: flex;
@@ -44,28 +58,81 @@ body {
     list-style: none;
     color: black;
 }
-
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+}
+.searchForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+    outline: none;
+}
+.searchForm input {
+    border-radius: 10px;
+    width: 100%;
+    padding: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    background: whitesmoke;
+    outline: none;
+}
+.search input:hover {
+    background-color: rgb(228, 228, 228);
+}
+.search button {
+    border-radius: 10px;
+    padding: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    background: whitesmoke;
+}
+.search button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
 /* CONTENT CONTAINER */
 .contentContainer {
     margin: 10px;
     padding: 5px;
 }
+.contentContainer h1 {
+    margin-left: 10%;
+}
 .dataContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 75%;
+    margin: auto;
 }
 .dataDiv {
     display: flex;
     flex-direction: column;
     margin: 10px;
     padding: 5px;
+    border-radius: 10px;
+    border-style: solid;  
+    box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
 }
-
+.dataDiv:hover {
+    background-color: aquamarine;
+}
+.dataDiv div>h2:hover {
+    cursor: default;
+}
 .contentDiv {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    padding: 5px;
 }
 .buttonDiv{
     display: flex;
@@ -83,6 +150,7 @@ body {
 .editButton:hover {
     background-color: var(--primary-color);
     color: white;
+    cursor: pointer;
 }
 .deleteButton {
     border-radius: 5px;
@@ -90,6 +158,7 @@ body {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     padding: 10px;
+    cursor: pointer;
 }
 .deleteButton:hover {
     background-color: var(--danger-color);
@@ -97,10 +166,49 @@ body {
 }
 .spanDiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-left: 20px;
     font-size: 12px;
 }
 .spanDiv span {
     margin: 2px;
+}
+.createForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+}
+
+.contentFormDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+}
+.contentFormDiv label {
+    width: auto;
+    margin-right: 10px;
+}
+.formContent {
+    width: 80%;
+    max-width: 100%;
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 20px;
+}
+
+.formButton {
+    padding: 5px;
+    border-radius: 5px;
+}
+.formButton:hover {
+    background-color: var(--primary-color);
+    color: white;
 }

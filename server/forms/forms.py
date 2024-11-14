@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class CreateForm(FlaskForm):
-    content = StringField("Enter Content", validators=[DataRequired()])
+    content = StringField("Enter Content", validators=[DataRequired()], render_kw={"placeholder":"Type Here..."})
     submit = SubmitField('Submit')
 
 

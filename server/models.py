@@ -59,6 +59,15 @@ def getAll():
         
         return results
     
+def getBySearch(word):
+    with get_db_cursor(True) as cur:
+        
+        query = """SELECT * FROM CRUD WHERE CONTENT ILIKE %s"""
+        cur.execute(query, (f'%{word}%',))
+        results = cur.fetchall()
+        return results
+        
+    
 def getByID(id):
     with get_db_cursor(True) as cur:
         query = """SELECT CONTENT FROM CRUD WHERE CRUD_ID=%s;"""

@@ -20,6 +20,15 @@ def read():
     print(crudData)
     return render_template('create.html', data=crudData, showForm=False)
 
+@app.route('/crud/search/', methods=["GET", "POST"])
+def search():
+    
+    word = request.args.get('word')
+    print('word :', word)
+    crudResults = db.getBySearch(word)
+    print(crudResults)
+    
+    return render_template('create.html', data=crudResults, showForm=False)
 
 @app.route('/crud/create', methods=['GET', 'POST'])
 def create():

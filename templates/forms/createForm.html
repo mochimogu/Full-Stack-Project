@@ -1,13 +1,11 @@
 {% extends "create.html" %}
 {% block forms %}
-    <form method="POST" action="{{ url_for('create')}}">
+    <form method="POST" action="{{ url_for('create')}}" class="createForm">
         {{ form.hidden_tag() }}
-        <div>
+        <div class="contentFormDiv">
             {{ form.content.label }}
             {{ form.content(class="formContent") }}
-        </div>
-        <div>
-            {{ form.submit }}
+            {{ form.submit(class="formButton") }}
         </div>
     </form>
     <span>
